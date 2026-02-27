@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop | Chocolini's Saltburn-by-the-Sea</title>
+    <meta name="description" content="Shop handmade chocolates online from Chocolini's in Saltburn-by-the-Sea. Continental truffles, gift boxes, novelty shapes, vegan options & more. UK delivery available.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ── Shop-specific styles ── */
+        .shop-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .shop-count {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .shop-count strong {
+            color: var(--text-dark);
+        }
+
+        /* Category Filter */
+        .filter-bar {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
+            border: 1.5px solid rgba(60, 21, 24, 0.12);
+            background: var(--warm-white);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-body);
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--caramel);
+            color: var(--chocolate);
+        }
+
+        .filter-btn.active {
+            background: var(--chocolate);
+            color: var(--cream);
+            border-color: var(--chocolate);
+        }
+
+        /* Sort */
+        .sort-select {
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            border: 1.5px solid rgba(60, 21, 24, 0.1);
+            background: var(--warm-white);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-body);
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--cream);
+            border-radius: 16px;
+            border: 1px solid rgba(60, 21, 24, 0.06);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(60, 21, 24, 0.1);
+        }
+
+        .product-img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            background: #f5ede3;
+            display: block;
+        }
+
+        .product-info {
+            padding: 1.2rem 1.2rem 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-category-tag {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--caramel);
+            margin-bottom: 0.4rem;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            line-height: 1.3;
+            margin-bottom: 0.6rem;
+            flex: 1;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--chocolate);
+            margin-bottom: 1rem;
+        }
+
+        .product-btn {
+            width: 100%;
+            padding: 0.7rem;
+            border-radius: 10px;
+            border: none;
+            background: var(--chocolate);
+            color: var(--cream);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        .product-btn:hover {
+            background: var(--chocolate-mid);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(60, 21, 24, 0.2);
+        }
+
+        .product-btn.out-of-stock {
+            background: #ccc;
+            color: #888;
+            cursor: not-allowed;
+        }
+
+        /* Cart floating button */
+        .cart-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--gold);
+            color: var(--chocolate);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 8px 30px rgba(212, 168, 85, 0.4);
+            cursor: pointer;
+            z-index: 900;
+            transition: all 0.3s;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .cart-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 40px rgba(212, 168, 85, 0.5);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: var(--chocolate);
+            color: var(--cream);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            font-size: 0.7rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Cart sidebar */
+        .cart-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(42, 18, 21, 0.5);
+            z-index: 1001;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .cart-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0; right: -420px; bottom: 0;
+            width: 400px;
+            max-width: 90vw;
+            background: var(--warm-white);
+            z-index: 1002;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: -8px 0 40px rgba(42, 18, 21, 0.15);
+        }
+
+        .cart-sidebar.open { right: 0; }
+
+        .cart-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(60, 21, 24, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+        }
+
+        .cart-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem 1.5rem;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-light);
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(60, 21, 24, 0.06);
+            align-items: center;
+        }
+
+        .cart-item-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            object-fit: cover;
+            background: #f5ede3;
+        }
+
+        .cart-item-info { flex: 1; }
+
+        .cart-item-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .cart-item-price {
+            font-size: 0.85rem;
+            color: var(--caramel);
+            font-weight: 600;
+        }
+
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .qty-btn {
+            width: 28px; height: 28px;
+            border-radius: 8px;
+            border: 1px solid rgba(60, 21, 24, 0.1);
+            background: var(--cream);
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            transition: all 0.2s;
+        }
+
+        .qty-btn:hover { background: var(--chocolate); color: var(--cream); }
+
+        .qty-num {
+            font-size: 0.9rem;
+            font-weight: 600;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .cart-footer {
+            padding: 1.5rem;
+            border-top: 1px solid rgba(60, 21, 24, 0.08);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-total-label {
+            font-size: 1rem;
+            color: var(--text-body);
+        }
+
+        .cart-total-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--chocolate);
+        }
+
+        .cart-delivery-note {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .cart-checkout {
+            width: 100%;
+            padding: 0.9rem;
+            border-radius: 12px;
+            border: none;
+            background: var(--gold);
+            color: var(--chocolate);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.02em;
+        }
+
+        .cart-checkout:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(212, 168, 85, 0.4);
+        }
+
+        /* No results */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-light);
+        }
+
+        .no-results h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .product-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .product-info { padding: 1rem; }
+            .product-name { font-size: 0.95rem; }
+        }
+
+        @media (max-width: 480px) {
+            .filter-bar { gap: 0.35rem; }
+            .filter-btn { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav nav-solid" id="nav">
+        <a href="index.html" class="nav-logo">Chocolini<span>'s</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="chocolate-menu.html">Chocolate Menu</a></li>
+            <li><a href="wedding-favours.html">Weddings</a></li>
+            <li><a href="delivery.html">Delivery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="shop.html" class="nav-cta active">Shop Online</a></li>
+        </ul>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+
+    <section class="page-hero">
+        <div class="hero-deco deco-1"></div>
+        <div class="hero-deco deco-2"></div>
+        <h1>Online <em>Shop</em></h1>
+        <p>Handmade chocolates delivered to your door. UK delivery £5.00 flat rate via Royal Mail 1st Class.</p>
+    </section>
+
+    <section class="content-section" style="padding-top: 3rem;">
+        <div class="container" style="max-width: 1300px;">
+
+            <!-- Filters -->
+            <div class="filter-bar" id="filterBar">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="favourites">Chocolini's Favourites</button>
+                <button class="filter-btn" data-filter="continental">Continental Boxes</button>
+                <button class="filter-btn" data-filter="mothers-day">Mother's Day</button>
+                <button class="filter-btn" data-filter="novelty">Novelty Shapes</button>
+                <button class="filter-btn" data-filter="occasion">Occasion Plaques</button>
+                <button class="filter-btn" data-filter="vegan">Dairy Free / Vegan</button>
+                <button class="filter-btn" data-filter="boxes">Gift Boxes</button>
+            </div>
+
+            <div class="shop-controls">
+                <div class="shop-count"><strong id="productCount">0</strong> products</div>
+                <select class="sort-select" id="sortSelect">
+                    <option value="default">Sort by: Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Name: A–Z</option>
+                </select>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid"></div>
+        </div>
+    </section>
+
+    <!-- Cart floating button -->
+    <button class="cart-float" id="cartFloat" onclick="toggleCart()">
+        🛒
+        <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+    </button>
+
+    <!-- Cart overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Cart sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Basket</h3>
+            <button class="cart-close" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <p style="font-size: 2rem; margin-bottom: 0.5rem;">🍫</p>
+                <p>Your basket is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span class="cart-total-label">Subtotal</span>
+                <span class="cart-total-price" id="cartTotal">£0.00</span>
+            </div>
+            <div class="cart-delivery-note">+ £5.00 UK delivery (free click & collect)</div>
+            <button class="cart-checkout" onclick="checkout()">Proceed to Checkout →</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">Chocolini<span>'s</span></div>
+            <ul class="footer-links">
+                <li><a href="delivery.html">Delivery Policy</a></li>
+                <li><a href="returns.html">Returns & Cancellations</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="footer-copy">© 2026 Chocolini's, Saltburn-by-the-Sea. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+    // ═══════════════════════════════════════════
+    // PRODUCT DATA — All products from Chocolini's
+    // Images hosted on Wix static CDN
+    // ═══════════════════════════════════════════
+    const products = [
+        // ── Mother's Day ──
+        { name: "Flower Turkish Delight", price: 6.50, category: "mothers-day", img: "https://static.wixstatic.com/media/40ae52_bb52c9be1d39496f83a6144296eea92c~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_bb52c9be1d39496f83a6144296eea92c~mv2.png" },
+        { name: "6 Flower Caramels", price: 3.95, category: "mothers-day", img: "https://static.wixstatic.com/media/40ae52_a2b17f8265fa4cef9121ae244798408b~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_a2b17f8265fa4cef9121ae244798408b~mv2.png" },
+        { name: "Mother's Day Truffles", price: 7.95, category: "mothers-day", img: "https://static.wixstatic.com/media/40ae52_0ca7874a29824eb995a3ce3302600a66~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0ca7874a29824eb995a3ce3302600a66~mv2.png" },
+        { name: "Mother's Day Chocolate Marshmallows", price: 6.50, category: "mothers-day", img: "https://static.wixstatic.com/media/40ae52_e732ee13e4cf476c92f8cbd4ab14b006~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_e732ee13e4cf476c92f8cbd4ab14b006~mv2.png" },
+        { name: "Large Mother's Day Plaque", price: 15.95, category: "mothers-day", img: "https://static.wixstatic.com/media/40ae52_35e0e6ece7654a25a1d623e21bb62639~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_35e0e6ece7654a25a1d623e21bb62639~mv2.png" },
+        { name: "Mother's Day Floral Bar", price: 6.50, category: "mothers-day", img: "https://static.wixstatic.com/media/40ae52_335763d442c245ff8308a23407fffd1c~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_335763d442c245ff8308a23407fffd1c~mv2.png" },
+        { name: "Mother's Day 24 Choc Box", price: 25.95, category: "mothers-day", img: "https://static.wixstatic.com/media/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png" },
+        { name: "Mother's Day 12 Choc Box", price: 14.95, category: "mothers-day", img: "https://static.wixstatic.com/media/40ae52_2e270a7c4d30495ca56886fe4b0cdf4b~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_2e270a7c4d30495ca56886fe4b0cdf4b~mv2.png" },
+        { name: "Name Sewing Bar", price: 3.50, category: "mothers-day", img: "https://static.wixstatic.com/media/40ae52_1161bfc2fd5b47c09ee84712445f98e8~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_1161bfc2fd5b47c09ee84712445f98e8~mv2.png" },
+
+        // ── Chocolini's Favourites ──
+        { name: "Fudge (Different Flavours)", price: 2.50, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_5a04f851f8ad4abaaf01b9b7351cf9b2~mv2.jpg/v1/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_5a04f851f8ad4abaaf01b9b7351cf9b2~mv2.jpg" },
+        { name: "Happy Birthday Bar", price: 3.50, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_84c383182acd4e799a433b56de9cedf2~mv2.jpg/v1/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_84c383182acd4e799a433b56de9cedf2~mv2.jpg" },
+        { name: "Chocolate Log", price: 1.95, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_b9ceeeda0681426a90115ba20e2b1658~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_b9ceeeda0681426a90115ba20e2b1658~mv2.png" },
+        { name: "Chocolate Buttons", price: 3.25, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_5b416905f5a34da3b336d7db0325850d~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_5b416905f5a34da3b336d7db0325850d~mv2.png" },
+        { name: "Chocolate Bar", price: 4.50, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_81823bff84da4236ae6e8844530e8e06~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_81823bff84da4236ae6e8844530e8e06~mv2.png" },
+        { name: "Chocolate Lollipop", price: 2.50, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_952db33ea39040d988c9e6fe98f5d531~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_952db33ea39040d988c9e6fe98f5d531~mv2.png" },
+        { name: "Giant Marshmallow", price: 2.25, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_f22328893c9645a5985e1422c9c51d9a~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_f22328893c9645a5985e1422c9c51d9a~mv2.png" },
+        { name: "Chocolate Marshmallows", price: 1.95, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_9694bc1b3ef44790b7338b2a67ec09d8~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_9694bc1b3ef44790b7338b2a67ec09d8~mv2.png" },
+        { name: "Flavour Bar", price: 3.75, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_150e04d7e8c947b7ace6cc3043c26048~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_150e04d7e8c947b7ace6cc3043c26048~mv2.png" },
+        { name: "Hot Chocolate Stirrer", price: 3.50, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_54dbb3da79b84258a652a5a5b7c21207~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_54dbb3da79b84258a652a5a5b7c21207~mv2.png" },
+        { name: "Biscoff Bites", price: 3.95, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_b80a1e70663c49118123296193fba159~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_b80a1e70663c49118123296193fba159~mv2.png" },
+        { name: "Peanut Butter Bites", price: 3.95, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_6bdd8798f02b48768b963bcd11040a64~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_6bdd8798f02b48768b963bcd11040a64~mv2.png" },
+        { name: "Cinder Crunch", price: 3.75, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_63afeddd6dd34300bbd5d356dae26c79~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_63afeddd6dd34300bbd5d356dae26c79~mv2.png" },
+        { name: "Occasion Bars", price: 3.50, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_cb110d0a5b66447ca68a7f88e4157aac~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_cb110d0a5b66447ca68a7f88e4157aac~mv2.png" },
+        { name: "Dark or Milk Chocolate Brazils", price: 2.95, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_00afe94419a0414d8d3d9e08c0bbaa48~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_00afe94419a0414d8d3d9e08c0bbaa48~mv2.png" },
+        { name: "Milk & Dark Raisins", price: 2.95, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_89f0b7a0fb3045c890f06d0a576a567f~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_89f0b7a0fb3045c890f06d0a576a567f~mv2.png" },
+        { name: "Sweet or Salt Liquorice", price: 3.00, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_c42eedda263c4a068ae34338ad0b2dd6~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_c42eedda263c4a068ae34338ad0b2dd6~mv2.png" },
+        { name: "Orangettes - Dark Chocolate", price: 8.50, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_eb142d1fdcda4249932ddb9f81475316~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_eb142d1fdcda4249932ddb9f81475316~mv2.png" },
+        { name: "Crystallised Ginger - Dark", price: 8.50, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_223615f378b04a8d8e10b5c622624eda~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_223615f378b04a8d8e10b5c622624eda~mv2.png" },
+        { name: "Salted Toffee Truffle", price: 7.95, category: "favourites", img: "https://static.wixstatic.com/media/40ae52_b80a1e70663c49118123296193fba159~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_b80a1e70663c49118123296193fba159~mv2.png" },
+
+        // ── Continental Boxes ──
+        { name: "6 Chocolate Box", price: 7.50, category: "continental", img: "https://static.wixstatic.com/media/40ae52_2e270a7c4d30495ca56886fe4b0cdf4b~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_2e270a7c4d30495ca56886fe4b0cdf4b~mv2.png" },
+        { name: "12 Chocolate Box", price: 14.95, category: "continental", img: "https://static.wixstatic.com/media/40ae52_2e270a7c4d30495ca56886fe4b0cdf4b~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_2e270a7c4d30495ca56886fe4b0cdf4b~mv2.png" },
+        { name: "16 Chocolate Box", price: 18.95, category: "continental", img: "https://static.wixstatic.com/media/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png" },
+        { name: "25 Chocolate Box", price: 27.95, category: "continental", img: "https://static.wixstatic.com/media/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png" },
+        { name: "36 Chocolate Box", price: 38.95, category: "continental", img: "https://static.wixstatic.com/media/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png" },
+        { name: "48 Chocolate Box", price: 49.95, category: "continental", img: "https://static.wixstatic.com/media/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png" },
+
+        // ── Dairy Free / Vegan ──
+        { name: "Dairy Free Buttons", price: 3.25, category: "vegan", img: "https://static.wixstatic.com/media/40ae52_e8eab438acd14d2b834750e2f930c5ec~mv2.jpg/v1/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_e8eab438acd14d2b834750e2f930c5ec~mv2.jpg" },
+        { name: "Dairy Free Marshmallow Stick", price: 2.75, category: "vegan", img: "https://static.wixstatic.com/media/40ae52_b12d7a1ffcc64855badf74e7ff96bbfc~mv2.jpg/v1/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_b12d7a1ffcc64855badf74e7ff96bbfc~mv2.jpg" },
+        { name: "Vegan Fruity Mix", price: 1.75, category: "vegan", img: "https://static.wixstatic.com/media/40ae52_56fb2d6d713c447e96afa8c53f3d8ffc~mv2.jpg/v1/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_56fb2d6d713c447e96afa8c53f3d8ffc~mv2.jpg" },
+
+        // ── Novelty Shapes ──
+        { name: "Unicorn", price: 2.75, category: "novelty", img: "https://static.wixstatic.com/media/40ae52_952db33ea39040d988c9e6fe98f5d531~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_952db33ea39040d988c9e6fe98f5d531~mv2.png" },
+        { name: "Elephant", price: 3.25, category: "novelty", img: "https://static.wixstatic.com/media/40ae52_f22328893c9645a5985e1422c9c51d9a~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_f22328893c9645a5985e1422c9c51d9a~mv2.png" },
+        { name: "Dog & Bone", price: 2.75, category: "novelty", img: "https://static.wixstatic.com/media/40ae52_b9ceeeda0681426a90115ba20e2b1658~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_b9ceeeda0681426a90115ba20e2b1658~mv2.png" },
+        { name: "Dinosaur", price: 3.25, category: "novelty", img: "https://static.wixstatic.com/media/40ae52_952db33ea39040d988c9e6fe98f5d531~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_952db33ea39040d988c9e6fe98f5d531~mv2.png" },
+        { name: "Teddy Bear", price: 2.75, category: "novelty", img: "https://static.wixstatic.com/media/40ae52_f22328893c9645a5985e1422c9c51d9a~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_f22328893c9645a5985e1422c9c51d9a~mv2.png" },
+        { name: "Tractor", price: 2.75, category: "novelty", img: "https://static.wixstatic.com/media/40ae52_b9ceeeda0681426a90115ba20e2b1658~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_b9ceeeda0681426a90115ba20e2b1658~mv2.png" },
+        { name: "Lego Bricks", price: 2.75, category: "novelty", img: "https://static.wixstatic.com/media/40ae52_5b416905f5a34da3b336d7db0325850d~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_5b416905f5a34da3b336d7db0325850d~mv2.png" },
+        { name: "Star Wars Figures - Milk", price: 2.75, category: "novelty", img: "https://static.wixstatic.com/media/40ae52_81823bff84da4236ae6e8844530e8e06~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_81823bff84da4236ae6e8844530e8e06~mv2.png" },
+        { name: "Star Wars Figures - White", price: 2.75, category: "novelty", img: "https://static.wixstatic.com/media/40ae52_5b416905f5a34da3b336d7db0325850d~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_5b416905f5a34da3b336d7db0325850d~mv2.png" },
+
+        // ── Occasion Plaques ──
+        { name: "Engagement Plaque", price: 7.95, category: "occasion", img: "https://static.wixstatic.com/media/40ae52_35e0e6ece7654a25a1d623e21bb62639~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_35e0e6ece7654a25a1d623e21bb62639~mv2.png" },
+        { name: "On Your Wedding Day Plaque", price: 7.95, category: "occasion", img: "https://static.wixstatic.com/media/40ae52_35e0e6ece7654a25a1d623e21bb62639~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_35e0e6ece7654a25a1d623e21bb62639~mv2.png" },
+        { name: "Happy Anniversary Plaque", price: 7.95, category: "occasion", img: "https://static.wixstatic.com/media/40ae52_35e0e6ece7654a25a1d623e21bb62639~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_35e0e6ece7654a25a1d623e21bb62639~mv2.png" },
+
+        // ── Gift Boxes ──
+        { name: "Thank You Box", price: 15.95, category: "boxes", img: "https://static.wixstatic.com/media/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png" },
+        { name: "Well Done Box", price: 15.95, category: "boxes", img: "https://static.wixstatic.com/media/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png" },
+        { name: "Good Luck Box", price: 15.95, category: "boxes", img: "https://static.wixstatic.com/media/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png" },
+        { name: "Happy Anniversary Box", price: 15.95, category: "boxes", img: "https://static.wixstatic.com/media/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png" },
+        { name: "Happy Birthday Box", price: 19.95, category: "boxes", img: "https://static.wixstatic.com/media/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png" },
+        { name: "Get Well Soon Box", price: 19.95, category: "boxes", img: "https://static.wixstatic.com/media/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0c01c8770034452ca5cdd92be31aafb5~mv2.png" },
+    ];
+
+    const categoryNames = {
+        'all': 'All Products',
+        'favourites': "Chocolini's Favourites",
+        'continental': 'Continental Boxes',
+        'mothers-day': "Mother's Day",
+        'novelty': 'Novelty Shapes',
+        'occasion': 'Occasion Plaques',
+        'vegan': 'Dairy Free / Vegan',
+        'boxes': 'Gift Boxes'
+    };
+
+    // ── Cart state ──
+    let cart = [];
+    let activeFilter = 'all';
+
+    // ── Render products ──
+    function renderProducts() {
+        const grid = document.getElementById('productGrid');
+        const sort = document.getElementById('sortSelect').value;
+
+        let filtered = activeFilter === 'all' ? [...products] : products.filter(p => p.category === activeFilter);
+
+        if (sort === 'price-low') filtered.sort((a, b) => a.price - b.price);
+        else if (sort === 'price-high') filtered.sort((a, b) => b.price - a.price);
+        else if (sort === 'name') filtered.sort((a, b) => a.name.localeCompare(b.name));
+
+        document.getElementById('productCount').textContent = filtered.length;
+
+        if (filtered.length === 0) {
+            grid.innerHTML = '<div class="no-results"><h3>No products found</h3><p>Try selecting a different category.</p></div>';
+            return;
+        }
+
+        grid.innerHTML = filtered.map((p, i) => `
+            <div class="product-card">
+                <img src="${p.img}" alt="${p.name}" class="product-img" loading="lazy" onerror="this.style.background='#e8d5c4'">
+                <div class="product-info">
+                    <div class="product-category-tag">${categoryNames[p.category] || p.category}</div>
+                    <div class="product-name">${p.name}</div>
+                    <div class="product-price">£${p.price.toFixed(2)}</div>
+                    <button class="product-btn" onclick="addToCart(${i})">Add to Basket</button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // ── Filter handling ──
+    document.getElementById('filterBar').addEventListener('click', (e) => {
+        if (!e.target.classList.contains('filter-btn')) return;
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        activeFilter = e.target.dataset.filter;
+        renderProducts();
+    });
+
+    document.getElementById('sortSelect').addEventListener('change', renderProducts);
+
+    // ── Cart functions ──
+    function addToCart(productIndex) {
+        const allProducts = activeFilter === 'all' ? [...products] : products.filter(p => p.category === activeFilter);
+        const sort = document.getElementById('sortSelect').value;
+        if (sort === 'price-low') allProducts.sort((a, b) => a.price - b.price);
+        else if (sort === 'price-high') allProducts.sort((a, b) => b.price - a.price);
+        else if (sort === 'name') allProducts.sort((a, b) => a.name.localeCompare(b.name));
+
+        const product = allProducts[productIndex];
+        const existing = cart.find(item => item.name === product.name);
+
+        if (existing) {
+            existing.qty++;
+        } else {
+            cart.push({ ...product, qty: 1 });
+        }
+
+        updateCart();
+
+        // Quick feedback animation
+        const btn = event.target;
+        btn.textContent = '✓ Added!';
+        btn.style.background = '#2d7a3a';
+        setTimeout(() => {
+            btn.textContent = 'Add to Basket';
+            btn.style.background = '';
+        }, 1000);
+    }
+
+    function updateCart() {
+        const badge = document.getElementById('cartBadge');
+        const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+
+        badge.style.display = totalItems > 0 ? 'flex' : 'none';
+        badge.textContent = totalItems;
+
+        const cartItemsEl = document.getElementById('cartItems');
+        const cartFooter = document.getElementById('cartFooter');
+
+        if (cart.length === 0) {
+            cartItemsEl.innerHTML = '<div class="cart-empty"><p style="font-size:2rem;margin-bottom:0.5rem;">🍫</p><p>Your basket is empty</p></div>';
+            cartFooter.style.display = 'none';
+            return;
+        }
+
+        cartFooter.style.display = 'block';
+
+        cartItemsEl.innerHTML = cart.map((item, i) => `
+            <div class="cart-item">
+                <img src="${item.img}" alt="${item.name}" class="cart-item-img">
+                <div class="cart-item-info">
+                    <div class="cart-item-name">${item.name}</div>
+                    <div class="cart-item-price">£${(item.price * item.qty).toFixed(2)}</div>
+                </div>
+                <div class="cart-item-qty">
+                    <button class="qty-btn" onclick="changeQty(${i}, -1)">−</button>
+                    <span class="qty-num">${item.qty}</span>
+                    <button class="qty-btn" onclick="changeQty(${i}, 1)">+</button>
+                </div>
+            </div>
+        `).join('');
+
+        const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+        document.getElementById('cartTotal').textContent = `£${total.toFixed(2)}`;
+    }
+
+    function changeQty(index, delta) {
+        cart[index].qty += delta;
+        if (cart[index].qty <= 0) cart.splice(index, 1);
+        updateCart();
+    }
+
+    function toggleCart() {
+        document.getElementById('cartOverlay').classList.toggle('open');
+        document.getElementById('cartSidebar').classList.toggle('open');
+    }
+
+    function checkout() {
+        // ═══════════════════════════════════════════
+        // STRIPE INTEGRATION POINT
+        // ═══════════════════════════════════════════
+        // Replace this alert with a redirect to Stripe Checkout.
+        //
+        // OPTION 1: Stripe Payment Links (no code)
+        //   - Create products in Stripe Dashboard
+        //   - Generate a Payment Link for each product
+        //   - Redirect: window.location.href = 'https://buy.stripe.com/your-link-here';
+        //
+        // OPTION 2: Stripe Checkout Session (needs small backend)
+        //   - Use Stripe.js + a serverless function (Netlify/Vercel)
+        //   - POST cart items to your function
+        //   - Function creates a Checkout Session via Stripe API
+        //   - Redirect customer to the session URL
+        //
+        // For now, show a summary:
+        const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+        const items = cart.map(i => `${i.qty}x ${i.name}`).join('\n');
+
+        alert(
+            `🛒 Order Summary\n\n` +
+            `${items}\n\n` +
+            `Subtotal: £${total.toFixed(2)}\n` +
+            `Delivery: £5.00\n` +
+            `Total: £${(total + 5).toFixed(2)}\n\n` +
+            `━━━━━━━━━━━━━━━━━━━━\n` +
+            `To enable real payments, connect\n` +
+            `Stripe to this site. See setup guide.`
+        );
+    }
+
+    // ── Initialise ──
+    renderProducts();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
