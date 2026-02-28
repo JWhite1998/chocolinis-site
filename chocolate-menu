@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chocolate Menu | Chocolini's Saltburn-by-the-Sea</title>
+<meta name="description" content="Explore our full continental chocolate menu with photos. 50+ handmade truffles, pralines, fondants and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<nav class="nav nav-solid" id="nav">
+    <a href="index.html" class="nav-logo-text">Chocolini<span>'s</span></a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="chocolate-menu.html" class="active">Chocolate Menu</a></li>
+<li><a href="wedding-favours.html">Weddings</a></li>
+<li><a href="delivery.html">Delivery</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="shop.html" class="nav-cta">Shop Online</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+    <div class="hero-deco deco-1"></div>
+    <div class="hero-deco deco-2"></div>
+    <h1>Chocolate <em>Menu</em></h1>
+    <p>Our full continental chocolate range with allergen and ingredient information. Every chocolate is handmade in our Saltburn shop.</p>
+</section>
+<section class="content-section">
+    <div class="container">
+        <h3 class="choc-section-title reveal">Liqueur Chocolates 🥃</h3>
+<div class="choc-menu-grid">
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_8c666559180f432e8948962399011b5f~mv2.png/v1/crop/x_7,y_10,w_458,h_721/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/8c666559180f432e8948962399011b5f.png" alt="Rum Truffle" class="enhanced-img" loading="lazy"><div class="choc-name">Rum Truffle</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_9407680b05324776844b68143a9b0ea4~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_9407680b05324776844b68143a9b0ea4~mv2.png" alt="Whisky Truffle" class="enhanced-img" loading="lazy"><div class="choc-name">Whisky Truffle</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_ae69d3d636f94c319caa76bde303d7cb~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_ae69d3d636f94c319caa76bde303d7cb~mv2.png" alt="Irish Cream" class="enhanced-img" loading="lazy"><div class="choc-name">Irish Cream</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_5434771817594a53893f3e0b5edc169a~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_5434771817594a53893f3e0b5edc169a~mv2.png" alt="Tiramisu" class="enhanced-img" loading="lazy"><div class="choc-name">Tiramisu</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_2f59ec8cc6324331a675f388f8ca1852~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_2f59ec8cc6324331a675f388f8ca1852~mv2.png" alt="Scotch Whisky" class="enhanced-img" loading="lazy"><div class="choc-name">Scotch Whisky</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_c690148ccc844ab3ae3cd4be0ac22b8c~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_c690148ccc844ab3ae3cd4be0ac22b8c~mv2.png" alt="Whole Cherry" class="enhanced-img" loading="lazy"><div class="choc-name">Whole Cherry</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_07ae7d9922d8495bae06187884a98bba~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_07ae7d9922d8495bae06187884a98bba~mv2.png" alt="Apricot Amaretto" class="enhanced-img" loading="lazy"><div class="choc-name">Apricot Amaretto</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_ef02208f9b0241fdb7b35f5b459761e1~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_ef02208f9b0241fdb7b35f5b459761e1~mv2.png" alt="Champagne" class="enhanced-img" loading="lazy"><div class="choc-name">Champagne</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_0dc7720978c0498f99af078c1446639c~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0dc7720978c0498f99af078c1446639c~mv2.png" alt="Irish Cream Truffle" class="enhanced-img" loading="lazy"><div class="choc-name">Irish Cream Truffle</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_51ce965555394a7ba287b457ef7d603f~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_51ce965555394a7ba287b457ef7d603f~mv2.png" alt="Cherry Liqueur" class="enhanced-img" loading="lazy"><div class="choc-name">Cherry Liqueur</div></div>
+</div>
+<h3 class="choc-section-title reveal">Coffee Collection ☕</h3>
+<div class="choc-menu-grid">
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_de3eb01a6eb54e64b0bc4f2c0e4cc20e~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_de3eb01a6eb54e64b0bc4f2c0e4cc20e~mv2.png" alt="Coffee" class="enhanced-img" loading="lazy"><div class="choc-name">Coffee</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_fe128dbec1164aea84926e6bc0270f42~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_fe128dbec1164aea84926e6bc0270f42~mv2.png" alt="Espresso" class="enhanced-img" loading="lazy"><div class="choc-name">Espresso</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_e2695425991f4c02a65f69e704aa748e~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_e2695425991f4c02a65f69e704aa748e~mv2.png" alt="Cappuccino Truffle" class="enhanced-img" loading="lazy"><div class="choc-name">Cappuccino Truffle</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_2dd1780d7dbe4904bdbfb1ad2f3256b5~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_2dd1780d7dbe4904bdbfb1ad2f3256b5~mv2.png" alt="Coffee Fondant" class="enhanced-img" loading="lazy"><div class="choc-name">Coffee Fondant</div></div>
+</div>
+<h3 class="choc-section-title reveal">Truffles &amp; Pralines 🍬</h3>
+<div class="choc-menu-grid">
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_7ec012c2f73749cab9a287eb5a8c4097~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_7ec012c2f73749cab9a287eb5a8c4097~mv2.png" alt="Caramel" class="enhanced-img" loading="lazy"><div class="choc-name">Caramel</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_c4772fca4da64f718bad93bfcfe32e51~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_c4772fca4da64f718bad93bfcfe32e51~mv2.png" alt="Vanilla Truffle" class="enhanced-img" loading="lazy"><div class="choc-name">Vanilla Truffle</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_c740a276654e4f9a853699c078d9974c~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_c740a276654e4f9a853699c078d9974c~mv2.png" alt="Dark Salted" class="enhanced-img" loading="lazy"><div class="choc-name">Dark Salted</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_5cb0d9d1059a4715bb093411d572cf17~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_5cb0d9d1059a4715bb093411d572cf17~mv2.png" alt="Salted Caramel" class="enhanced-img" loading="lazy"><div class="choc-name">Salted Caramel</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_b3dbf09e20914899b4699654f58e2afa~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_b3dbf09e20914899b4699654f58e2afa~mv2.png" alt="Salt Truffle" class="enhanced-img" loading="lazy"><div class="choc-name">Salt Truffle</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_e28ce064e98846f3b742f9a6579a4b69~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_e28ce064e98846f3b742f9a6579a4b69~mv2.png" alt="Cocoa Truffle" class="enhanced-img" loading="lazy"><div class="choc-name">Cocoa Truffle</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_1d6fa623024a4dc891f3cdc88e5e3105~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_1d6fa623024a4dc891f3cdc88e5e3105~mv2.png" alt="Marzipan" class="enhanced-img" loading="lazy"><div class="choc-name">Marzipan</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_cade7a5ddc854ff688b6074571d60b73~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_cade7a5ddc854ff688b6074571d60b73~mv2.png" alt="Milk Marzipan" class="enhanced-img" loading="lazy"><div class="choc-name">Milk Marzipan</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_865ef995407d41338b77d629f20f8b2b~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_865ef995407d41338b77d629f20f8b2b~mv2.png" alt="Pistachio" class="enhanced-img" loading="lazy"><div class="choc-name">Pistachio</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_299d3d76d52643a4aec4f76ca6dd83ec~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_299d3d76d52643a4aec4f76ca6dd83ec~mv2.png" alt="Praline Milk" class="enhanced-img" loading="lazy"><div class="choc-name">Praline Milk</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_b271842b81c84714a0c5ec2d5c075805~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_b271842b81c84714a0c5ec2d5c075805~mv2.png" alt="Praline Nut" class="enhanced-img" loading="lazy"><div class="choc-name">Praline Nut</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_3e825a90870b4892af6abf3381d0413e~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_3e825a90870b4892af6abf3381d0413e~mv2.png" alt="Pecan Maple" class="enhanced-img" loading="lazy"><div class="choc-name">Pecan Maple</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_fa7dd94436894ebfbce427d7287ef492~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_fa7dd94436894ebfbce427d7287ef492~mv2.png" alt="Brazil White" class="enhanced-img" loading="lazy"><div class="choc-name">Brazil White</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_cfbf953bb74449d984f3215523627f89~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_cfbf953bb74449d984f3215523627f89~mv2.png" alt="Brazil Dark" class="enhanced-img" loading="lazy"><div class="choc-name">Brazil Dark</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_7f6db65033d64cf48be7985951c57c77~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_7f6db65033d64cf48be7985951c57c77~mv2.png" alt="Nero" class="enhanced-img" loading="lazy"><div class="choc-name">Nero</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_5feb8b0336bc4e7a8665d6b15b9304f1~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_5feb8b0336bc4e7a8665d6b15b9304f1~mv2.png" alt="Brel" class="enhanced-img" loading="lazy"><div class="choc-name">Brel</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_3dda37b2c8c94352b233946d711bd635~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_3dda37b2c8c94352b233946d711bd635~mv2.png" alt="Oskar" class="enhanced-img" loading="lazy"><div class="choc-name">Oskar</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_8208b63a4ef94574b19821b362351242~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_8208b63a4ef94574b19821b362351242~mv2.png" alt="Freya" class="enhanced-img" loading="lazy"><div class="choc-name">Freya</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_e8b1d962d42a40019d589225f283f4a4~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_e8b1d962d42a40019d589225f283f4a4~mv2.png" alt="Ginger Ball" class="enhanced-img" loading="lazy"><div class="choc-name">Ginger Ball</div></div>
+</div>
+<h3 class="choc-section-title reveal">Fruit &amp; Floral 🍓</h3>
+<div class="choc-menu-grid">
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_fa6a310955c8486da722006d7ea1ffa5~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_fa6a310955c8486da722006d7ea1ffa5~mv2.png" alt="Raspberry" class="enhanced-img" loading="lazy"><div class="choc-name">Raspberry</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_99a67657ab1542ea873e931ff9329982~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_99a67657ab1542ea873e931ff9329982~mv2.png" alt="Raspberry Champagne" class="enhanced-img" loading="lazy"><div class="choc-name">Raspberry Champagne</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_480c2776919744199aa95e28d8473d90~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_480c2776919744199aa95e28d8473d90~mv2.png" alt="Raspberry (Dark)" class="enhanced-img" loading="lazy"><div class="choc-name">Raspberry (Dark)</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_92f0094a384b49f69df05b6d1e7fc398~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_92f0094a384b49f69df05b6d1e7fc398~mv2.png" alt="Orange Truffle" class="enhanced-img" loading="lazy"><div class="choc-name">Orange Truffle</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_32c5fdc4dd05427e982b1fd14ec91cc7~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_32c5fdc4dd05427e982b1fd14ec91cc7~mv2.png" alt="Orange Cream" class="enhanced-img" loading="lazy"><div class="choc-name">Orange Cream</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_254654a6526942c08a1210faa31b3225~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_254654a6526942c08a1210faa31b3225~mv2.png" alt="Orange (Dark)" class="enhanced-img" loading="lazy"><div class="choc-name">Orange (Dark)</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_1c834cd56ad74da09ce75f5cb7d8b350~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_1c834cd56ad74da09ce75f5cb7d8b350~mv2.png" alt="Lemon" class="enhanced-img" loading="lazy"><div class="choc-name">Lemon</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_2ff02922454e403cb644f5b2869f0979~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_2ff02922454e403cb644f5b2869f0979~mv2.png" alt="Lime" class="enhanced-img" loading="lazy"><div class="choc-name">Lime</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_b2d29a74137e4da8bdfb9ad22325985d~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_b2d29a74137e4da8bdfb9ad22325985d~mv2.png" alt="Red Berry Cup" class="enhanced-img" loading="lazy"><div class="choc-name">Red Berry Cup</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_349749df361e4a6782ad21160fc32561~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_349749df361e4a6782ad21160fc32561~mv2.png" alt="Strawberry Fondant" class="enhanced-img" loading="lazy"><div class="choc-name">Strawberry Fondant</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_9a706909c68c41db90b3b0737414704a~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_9a706909c68c41db90b3b0737414704a~mv2.png" alt="Rhubarb &amp; Ginger" class="enhanced-img" loading="lazy"><div class="choc-name">Rhubarb &amp; Ginger</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_43bbd3c92cf4483683c5be141e13e4e1~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_43bbd3c92cf4483683c5be141e13e4e1~mv2.png" alt="Violet" class="enhanced-img" loading="lazy"><div class="choc-name">Violet</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_a1e32888958e47139c6e63eb69a057ef~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_a1e32888958e47139c6e63eb69a057ef~mv2.png" alt="Rose" class="enhanced-img" loading="lazy"><div class="choc-name">Rose</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_82c3018dc5d841a3bee2c9d06b580a70~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_82c3018dc5d841a3bee2c9d06b580a70~mv2.png" alt="Mint" class="enhanced-img" loading="lazy"><div class="choc-name">Mint</div></div>
+</div>
+<h3 class="choc-section-title reveal">Christmas Range 🎄</h3>
+<div class="choc-menu-grid">
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_5ba82df4c3094d95ac25c2d1b5caee0f~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_5ba82df4c3094d95ac25c2d1b5caee0f~mv2.png" alt="Yule Log" class="enhanced-img" loading="lazy"><div class="choc-name">Yule Log</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_06cca3eee2c44b3e9ef3e7d7f738db1f~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_06cca3eee2c44b3e9ef3e7d7f738db1f~mv2.png" alt="White Holly" class="enhanced-img" loading="lazy"><div class="choc-name">White Holly</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_eacbffeca79a4881816d00d0211705c5~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_eacbffeca79a4881816d00d0211705c5~mv2.png" alt="Port &amp; Cranberry" class="enhanced-img" loading="lazy"><div class="choc-name">Port &amp; Cranberry</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_c75c581c6dcc4f20a0d0e3eb3dd45512~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_c75c581c6dcc4f20a0d0e3eb3dd45512~mv2.png" alt="Speculoos" class="enhanced-img" loading="lazy"><div class="choc-name">Speculoos</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_0acfd621c9f94653b0dea0b5fd39243d~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_0acfd621c9f94653b0dea0b5fd39243d~mv2.png" alt="Christmas Tree" class="enhanced-img" loading="lazy"><div class="choc-name">Christmas Tree</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_9a5a4a389deb457dbf0a7cfe968af7e5~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_9a5a4a389deb457dbf0a7cfe968af7e5~mv2.png" alt="Mozart" class="enhanced-img" loading="lazy"><div class="choc-name">Mozart</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_a3535ed947734d7ea47286a6e69f4719~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_a3535ed947734d7ea47286a6e69f4719~mv2.png" alt="Milk Holly" class="enhanced-img" loading="lazy"><div class="choc-name">Milk Holly</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_bfced82ac6a64e03a6d905f52eb005e6~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_bfced82ac6a64e03a6d905f52eb005e6~mv2.png" alt="Foil Praline" class="enhanced-img" loading="lazy"><div class="choc-name">Foil Praline</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_dee43318c29546c792bd1bb22fd07909~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_dee43318c29546c792bd1bb22fd07909~mv2.png" alt="Florentine" class="enhanced-img" loading="lazy"><div class="choc-name">Florentine</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_91c18f7322a846bda7e49177bdb83127~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_91c18f7322a846bda7e49177bdb83127~mv2.png" alt="Penguin" class="enhanced-img" loading="lazy"><div class="choc-name">Penguin</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_c6e5e6c4285a4eddb63b985dc238e480~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_c6e5e6c4285a4eddb63b985dc238e480~mv2.png" alt="Christmas Pudding" class="enhanced-img" loading="lazy"><div class="choc-name">Christmas Pudding</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_2af8ffa5ab5540dea247a86f0bea40cc~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_2af8ffa5ab5540dea247a86f0bea40cc~mv2.png" alt="Mulled Wine" class="enhanced-img" loading="lazy"><div class="choc-name">Mulled Wine</div></div>
+</div>
+<h3 class="choc-section-title reveal">No Added Sugar 🌿</h3>
+<div class="choc-menu-grid">
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_a24edb5235c54f32bd54e377a5b1d6f3~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_a24edb5235c54f32bd54e377a5b1d6f3~mv2.png" alt="No Added Sugar Selection" class="enhanced-img" loading="lazy"><div class="choc-name">No Added Sugar Selection</div></div>
+<div class="choc-item reveal"><img src="https://static.wixstatic.com/media/40ae52_1e1ab985741340b8b8c9e3227a22e1ba~mv2.png/v1/fill/w_400,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/40ae52_1e1ab985741340b8b8c9e3227a22e1ba~mv2.png" alt="Chocolate Shells" class="enhanced-img" loading="lazy"><div class="choc-name">Chocolate Shells</div></div>
+</div>
+
+        <div class="info-card reveal" style="margin-top:3rem;">
+            <h3>⚠️ Allergen Information</h3>
+            <p>Full allergen and ingredient information is available for all chocolates. Our products are made in an environment that handles nuts, milk, soya, and gluten.</p>
+            <div class="highlight">Need help? Call <a href="tel:01287626141">01287 626141</a> or email <a href="mailto:chocolinis@btinternet.com">chocolinis@btinternet.com</a></div>
+        </div>
+    </div>
+</section>
+<div class="cta-banner">
+    <h2>Order your <em>favourites</em> online</h2>
+    <p>Browse our full range and get handmade chocolates delivered to your door.</p>
+    <a href="shop.html" class="btn btn-primary">Visit Our Online Shop →</a>
+</div>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <a href="index.html" class="footer-logo-text">Chocolini<span>'s</span></a>
+        <ul class="footer-links">
+            <li><a href="delivery.html">Delivery Policy</a></li>
+            <li><a href="returns.html">Returns &amp; Cancellations</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="footer-copy">&copy; 2026 Chocolini's, Saltburn-by-the-Sea. All rights reserved.</div>
+    </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>
