@@ -1,3 +1,4 @@
+// ── Scroll-triggered nav ──
 const nav = document.getElementById('nav');
 if (nav && !nav.classList.contains('nav-solid')) {
     window.addEventListener('scroll', () => {
@@ -5,6 +6,7 @@ if (nav && !nav.classList.contains('nav-solid')) {
     });
 }
 
+// ── Mobile menu ──
 const mobileToggle = document.getElementById('mobileToggle');
 const navLinks = document.getElementById('navLinks');
 
@@ -24,14 +26,16 @@ if (mobileToggle && navLinks) {
     });
 }
 
+// ── Scroll reveal ──
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+// ── Smooth scroll ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -40,6 +44,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// ── Contact form handler ──
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
